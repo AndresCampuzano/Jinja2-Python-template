@@ -9,6 +9,10 @@
 <h3>Loop</h3>
 <ul>
     {% for pizza in pizzas %}
-    <li>{{ pizza }}</li>
+        {% if pizza == 41 %}
+        <li>{{ pizza + 100 }}</li>
+        {% else %}
+        <li>{{ pizza }}</li>
+        {% endif %}
     {% endfor %}
 </ul>

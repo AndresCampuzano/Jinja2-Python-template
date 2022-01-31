@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
     first_name = "Andres"
     stuff = "This is <strong>bold text</strong>"
-    pizzas = ["pepperoni", "cheese", "another pizza"]
+    pizzas = ["pepperoni", "cheese", "another pizza", 41]
     return render_template("index.html",
                            first_name=first_name,
                            stuff=stuff,
