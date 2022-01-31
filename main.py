@@ -5,14 +5,15 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    user_ip = request.remote_addr
-    response = make_response(redirect('/hello'))
-    response.set_cookie('user_ip', user_ip)
-    return response
+    first_name = "Andres"
+    stuff = "This is <strong>bold text</strong>"
+    pizzas = ["pepperoni", "cheese", "another pizza"]
+    return render_template("index.html",
+                           first_name=first_name,
+                           stuff=stuff,
+                           pizzas=pizzas)
 
 
-@app.route('/hello')
-def hello():
-    user_ip = request.cookies.get('user_ip')
-    user_ip = escape(user_ip)
-    return render_template("hello.html", user_ip=user_ip)
+@app.route('/user/<name>')
+def user(name):
+    return render_template("user.html", user_name=name)
