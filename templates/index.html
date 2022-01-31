@@ -1,18 +1,23 @@
-<h1>Hello World!</h1>
+{% extends 'base.html' %}
 
-<p>This is my first page</p>
+{% block content %}
+    <h1>Hello World!</h1>
 
-<p>My name is {{ first_name }}</p>
+    <p>This is my first page</p>
 
-<p>{{ stuff | safe }}</p>
+    <p>My name is {{ first_name }}</p>
 
-<h3>Loop</h3>
-<ul>
-    {% for pizza in pizzas %}
-        {% if pizza == 41 %}
-        <li>{{ pizza + 100 }}</li>
-        {% else %}
-        <li>{{ pizza }}</li>
-        {% endif %}
-    {% endfor %}
-</ul>
+    <p>{{ stuff | safe }}</p>
+
+    <h3>Loop</h3>
+    <ul>
+        {% for pizza in pizzas %}
+            {% if pizza == 41 %}
+            <li>{{ pizza + 100 }}</li>
+            {% else %}
+            <li>{{ pizza }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock %}
+
